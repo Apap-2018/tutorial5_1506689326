@@ -23,18 +23,18 @@
 			</tr>
 			</thead>
 			<tbody>
-				<tr th:each="flight,iterationStat : *{pilotFlight}">
+				<tr th:each="flight,iterasi : *{pilotFlight}">
 					<td>
-						<input type="text" th:field="*{pilotFlight[__${iterationStat.index}__].flightNumber}" required/>
+						<input type="text" th:field="*{pilotFlight[__${iterasi.index}__].flightNumber}" required/>
 					</td>
 					<td>
-						<input type="text" th:field="*{pilotFlight[__${iterationStat.index}__].origin}" required/>
+						<input type="text" th:field="*{pilotFlight[__${iterasi.index}__].origin}" required/>
 					</td>
 					<td>
-						<input type="text" th:field="*{pilotFlight[__${iterationStat.index}__].destination}" required/>
+						<input type="text" th:field="*{pilotFlight[__${iterasi.index}__].destination}" required/>
 					</td>
 					<td>
-						<input type="date" th:field="*{pilotFlight[__${iterationStat.index}__].time}" required/>
+						<input type="date" th:field="*{pilotFlight[__${iterasi.index}__].time}" required/>
 					</td>
 				</tr>
 			</tbody>
