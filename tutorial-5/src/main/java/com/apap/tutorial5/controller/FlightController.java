@@ -56,8 +56,8 @@ public class FlightController {
 	@RequestMapping(value="/flight/add/{licenseNumber}", params={"add"})
 	public String addRow(@ModelAttribute PilotModel pilot, BindingResult bindingResult, Model model) {
 		pilot.getPilotFlight().add(new FlightModel());
-	    model.addAttribute("pilot", pilot);
-	    return "addFlight";
+	    	model.addAttribute("pilot", pilot);
+	   	return "addFlight";
 	}
 	
 	@RequestMapping(value = "/flight/add/{licenseNumber}", params={"submit"}, method = RequestMethod.POST)
