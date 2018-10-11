@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Add Pilot</title>
+
+	<object th:include="fragments/fragment :: css" th:remove="tag"></object>
+	<object th:include="fragments/fragment :: js" th:remove="tag"></object>
+</head>
+
+<body>
+	<nav th:replace="fragments/fragment :: navbar(title='Add Pilot')"></nav>
+	<h2>Hello!</h2>
+	<h3>Tambah Pilot</h3>
+	<!-- <form th:action="@{/pilot/add}" th:object="${pilot}" method="POST">
+	License Number: <br>
+	<input type="text" name="licenseNumber" />
+	<br>
+	Name: <br>
+	<input type="text" name="name" />
+	<br>
+	Destination: <br>
+	<input type="text" name="destination" />
+	<br>
+	Fly Hour: <br>
+	<input type="number" name="flyHour" />
+	<br><br>
+	<button type="submit">Submit</button>
+	</form>
+	 -->
+	
+	<div class="row">
+		<div class="col-md-6">
+			<div class="card">
+				<div class="card-header">
+					Cari Pilot berdasarkan Nomor Lisensi
+				</div>
+				<form th:action="@{/pilot/add}" th:object="${pilot}" method="POST">
+					<div class="card-body">
+						<label for="licenseNumber">Nomor Lisensi:</label>
+						<input type="text" name="licenseNumber" class="form-control" required/>
+						<p></p>
+						<label for="name">Name:</label>
+						<input type="text" name="name" class="form-control" required/>
+						<p></p>
+						<label for="destination">Destination:</label>
+						<input type="text" name="destination" class="form-control" required/>
+						<p></p>
+						<label for="flyHour">Fly Hour:</label>
+						<input type="number" name="flyHour" class="form-control" required/>
+						<p></p>
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

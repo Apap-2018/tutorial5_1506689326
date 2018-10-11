@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+	<title>View Flight</title>
+</head>
+
+<body>	
+	<h3> Data penerbangan  </h3>
+	<br>
+	<div th:each="flight:${flights}">
+		<h4 th:text="'Nama Pilot: ' + ${flight.pilot.name}"></h4>
+		<h4 th:text="'License Number Pilot: ' + ${flight.pilot.licenseNumber}"></h4>
+		<br>
+		<br>
+		
+		<td><a th:href="@{/flight/add/} + ${flight.pilot.licenseNumber}">add flight</a></td>
+		<td><a th:href="@{/flight/update/} + ${flight.id}">Update Pilot</a></td>
+		<br>
+		<td><a th:href="@{/flight/delete/} + ${flight.id}">Delete flight</a></td>
+		<br>
+	</div>
+</body>
+
+</html>

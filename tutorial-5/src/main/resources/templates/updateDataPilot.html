@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Update data Pilot</title>
+	<object th:include="fragments/fragment :: css" th:remove="tag"></object>
+	<object th:include="fragments/fragment :: js" th:remove="tag"></object>
+</head>
+
+<body>
+	<nav th:replace="fragments/fragment :: navbar(title='Update Pilot')"></nav>
+	
+	<!-- 
+	<h2>Edit Data Pilot</h2>
+	<form th:action = "@{/pilot/update}" th:object="${update}" method = "POST">
+	License Number:
+	<br>
+	<input type = "text" name="licenseNumber" th:field ="${update.licenseNumber}" readonly = "readonly"/>
+	<br>
+	Name:
+	<br>
+	<input type = "text" name="name" th:field ="${update.name}" required = "true"/>
+	<br>
+	Fly Hour:
+	<br>
+	<input type = "number" name="flyHour" th:field ="${update.flyHour}" required = "true"/>
+	<br>
+	<button type = "submit">Submit</button>
+	</form>
+	 -->
+	 
+	 <div class="row">
+		<div class="col-md-6">
+			<div class="card">
+				<div class="card-header">
+					Edit Data Pilot
+				</div>
+				<form th:action="@{/pilot/update}" th:object="${update}" method="POST">
+					<div class="card-body">
+						<label for="licenseNumber">Nomor Lisensi:</label>
+						<input type = "text" name="licenseNumber" th:field ="${update.licenseNumber}" readonly = "readonly" class="form-control"/>
+						<p></p>
+						<label for="name">Name:</label>
+						<input type = "text" name="name" th:field ="${update.name}" required = "true" class="form-control"/>
+						<p></p>
+						<label for="flyHour">Fly Hour:</label>
+						<input type = "number" name="flyHour" th:field ="${update.flyHour}" required = "true" class="form-control"/>
+						<p></p>
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>
